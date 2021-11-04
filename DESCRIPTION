@@ -1,0 +1,15 @@
+Package: MetTracer
+Type: Package
+Title: Tracing isotope labelled metabolites
+Version: 0.1.1
+Date: 2019-07-09
+Author: yandong Yin
+Maintainer: Yandong Yin <yddream@gmail.com>
+Description: Tracing isotopoluoge distribution changes with target extraction
+      of metabolite profiles from labelled data
+License: GPL (>= 2)
+Imports: Rcpp, gsubfn, nnls, BiocParallel, plyr, ggsci, enviPat, xcms
+LinkingTo: Rcpp
+RoxygenNote: 7.1.1
+NeedsCompilation: yes
+Packaged: 2019-09-24 09:38:30 UTC; yinyd
