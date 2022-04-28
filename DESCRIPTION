@@ -1,7 +1,7 @@
 Package: MetTracer
 Type: Package
 Title: Tracing isotope labelled metabolites
-Version: 0.1.1
+Version: 1.0.1
 Date: 2019-07-09
 Author: yandong Yin
 Maintainer: Yandong Yin <yddream@gmail.com>
