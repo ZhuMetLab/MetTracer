@@ -7,7 +7,7 @@ Author: yandong Yin
 Maintainer: Yandong Yin <yddream@gmail.com>
 Description: Tracing isotopoluoge distribution changes with target extraction
       of metabolite profiles from labelled data
-License: GPL (>= 2)
+License: CC BY-NC-NA 4.0
 Imports: Rcpp, gsubfn, nnls, BiocParallel, plyr, ggsci, enviPat, xcms
 LinkingTo: Rcpp
 RoxygenNote: 7.1.1
