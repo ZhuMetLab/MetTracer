@@ -2,7 +2,9 @@
 
 ## Introduction
 
-`MetTracer` is an R package for tracing isotopic labeling experiments. For convenience, we build the docker image contains `MetTracer` package ([zhulab/mettracer-r](https://hub.docker.com/r/zhulab/mettracer-r)). Users can pull the image and run MetTracer without installing further packages.
+`MetTracer` is an R package for tracing isotopic labeling experiments. Current source code still requires some in-house packages, which were not released yet. Hence, users are recommanded to use the docker image we build, which is build with all requirements and easy to use.
+
+The docker image [`zhulab/mettracer-r`](https://hub.docker.com/r/zhulab/mettracer-r) contains entire envorienment for running `MetTracer`.  Users can pull it and run MetTracer just as following.
 
 ## What is MetTracer
 `MetTracer-r` is an Docker environment to processing isotope labelled metabolomics data with MetTracer R package. It is based on the [`r-base`](https://hub.docker.com/_/r-base/) docker. 
