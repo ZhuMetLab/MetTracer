@@ -89,3 +89,7 @@ docker run -it --rm -v "$PWD":/data -u $(id -u ${USER}):$(id -g ${USER}) zhulab/
 * `-v "$PWD":/home/${USER}`: mapping current dirctory as home directory in docker container
 *  `-u $(id -u ${USER}):$(id -g ${USER})`: using current user to run the container
 * `Rscript ~/run.R`: run run.R in container home directory with `Rscript`  command
+
+# updates
+## v1.0.1
+- bugfix for adduct charge defination
