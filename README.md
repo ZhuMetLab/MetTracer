@@ -93,3 +93,7 @@ docker run -it --rm -v "$PWD":/data -u $(id -u ${USER}):$(id -g ${USER}) zhulab/
 # updates
 ## v1.0.1
 - bugfix for adduct charge defination
+
+## v1.0.4
+- update adducts info to match adduct types in MetDNA2
+- several minor bugfix
