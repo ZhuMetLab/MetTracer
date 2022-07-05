@@ -1,8 +1,8 @@
 Package: MetTracer
 Type: Package
 Title: Tracing isotope labelled metabolites
-Version: 1.0.1
-Date: 2019-07-09
+Version: 1.0.4
+Date: 2022-07-05
 Author: yandong Yin
 Maintainer: Yandong Yin <yddream@gmail.com>
 Description: Tracing isotopoluoge distribution changes with target extraction
@@ -12,4 +12,4 @@ Imports: Rcpp, gsubfn, nnls, BiocParallel, plyr, ggsci, enviPat, xcms
 LinkingTo: Rcpp
 RoxygenNote: 7.1.1
 NeedsCompilation: yes
-Packaged: 2019-09-24 09:38:30 UTC; yinyd
+Packaged: 2022-07-05 09:38:30 UTC; yinyd
