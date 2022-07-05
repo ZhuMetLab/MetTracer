@@ -6,11 +6,10 @@
 #' @param d.res Folder for storing results
 #' @param element.trace Monoisotope elements, e.g., 12C or 14N
 #' @param element.label Isotope labelled elements, e.g., 13C or 15N
-#' @param equipment Equipment type: QTOF/Obiwarp
-#' @param resolution Resolution of equipment, for QTOF, it is 3000 by default
+#' @param equipment Equipment type: QTOF/Orbitrap
+#' @param resolution Resolution of equipment. Default values: QTOF, 30,000 Orbitrap, 60,000.
 #' @param ppm Mass to charge value (m/z) tolerance for MS1 ions
-#' @param res.define Where the PPP resolution starts from. For QTOF equipments
-#'      in zhulab, it is set to 400
+#' @param res.define Where the PPP resolution starts from. Default values: QTOF, 400, Orbitrap, 200.
 #' @param nSlaves Number of threads to be used
 #' @return an \code{ExperimentParam} object
 #' @export
@@ -20,10 +19,10 @@ ExperimentParam <- function(
   d.tmp = file.path(d.res, 'tmp'),
   element.trace = '12C',
   element.label = '13C',
-  equipment = c('QTOF', 'Obiwarp'),
+  equipment = c('QTOF', 'Orbitrap'),
   resolution = NULL,
   ppm = 25,
-  res.define = 400,
+  res.define = NULL,
   nSlaves = 4) {
   options(mc.cores = nSlaves)
 
@@ -39,8 +38,15 @@ ExperimentParam <- function(
   }
 
   equipment <- match.arg(equipment)
-  if (missing(resolution) | is.null(resolution)) {
-    resolution <- switch(equipment, 'QTOF' = 3000, 'Obiwarp' = 10000)
+  if (missing(resolution)) {
+    resolution <- switch(equipment, 'QTOF' = 30000, 'Orbitrap' = 600000)
+  } else if (is.null(resolution)) {
+    resolution <- switch(equipment, 'QTOF' = 30000, 'Orbitrap' = 600000)
+  }
+  if (missing(res.define)) {
+    res.define <- switch(equipment, 'QTOF' = 400, 'Orbitrap' = 200)
+  } else if (is.null(res.define)) {
+    res.define <- switch(equipment, 'QTOF' = 400, 'Orbitrap' = 200)
   }
 
   return(new("ExperimentParam",
