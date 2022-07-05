@@ -27,6 +27,7 @@ setMethod(
     rownames(dt.anno) <- dt.anno$name
     col.info <- c('mz', 'isotope', 'adduct', 'compound.name', 'ID', 'Formula')
     info.list <- lapply(dt.anno$name, function(nm) {
+      # cat(nm, '\t')
       dr <- dt.anno[nm, ]
       info <- do.call(cbind, strsplit(as.character(dr[col.info]), split = ';'))
       colnames(info) <- col.info
@@ -88,9 +89,15 @@ setMethod(
       range(eic[, 1])
     }))
     colnames(rt.rg.eic) <- c('rtmin', 'rtmax')
+
+    res.define <- switch(experimentParam@equipment,
+                         "Orbitrap" = 0,
+                         "QTOF" = experimentParam@res.define,
+                         stop("Undefined equipment type", experimentParam@equipment)
+    )
     mz.rg.eic <- lapply(mz.isomer, function(isotope) {
       mz <- sort(unique(unlist(isotope)))
-      t(sapply(mz, PpmRange, experimentParam@ppm))
+      t(sapply(mz, PpmRange, experimentParam@ppm, res.define))
     })
 
     smp.present <- attributes(eic.present)$smp.present
